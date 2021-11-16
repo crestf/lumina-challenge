@@ -21,14 +21,15 @@ export class DataStoreService {
     return JSON.parse(localStorage.getItem(this.KEY_TRACKED_COIN)) || [];
   }
   getTrackedCoin(ids: Array<string>, by?: string, dir?: boolean): Array<Coin> {
-    console.log(by, dir);
     const coin = this.getAllCoin();
     const selectedCoin = coin.filter((coin: Coin) => ids.includes(coin.id));
-    // if (!!by && !!dir) {
-    //   selectedCoin.sort((a, b) => (a[by] > b[by]) ? 1 : -1);
-    // } else {
+    if (!!by) {
+      return selectedCoin.sort((a, b) => {
+        return (a[by].toString() > b[by].toString()) ? (dir ? 1 : -1) : (dir ? -1 : 1)
+      });
+    } else {
       return selectedCoin;
-    // }
+    }
   }
   addTrackedCoin(id: string): Array<Coin> {
     const tracked = this.getTrackedCoinId();
