@@ -33,7 +33,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.sortDirectionUp$ = this.store.pipe(select(fromReducer.getSortDirUp));
 
     this.store.dispatch(new action.LoadTrackedCoinAction());
-    // this.store.dispatch(new action.FetchAllCoinAction());
+    this.store.dispatch(new action.FetchAllCoinAction());
   }
 
   ngAfterViewInit() {
