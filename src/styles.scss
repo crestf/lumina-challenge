@@ -1,0 +1,65 @@
+$gray-base:              #333333 !default;
+$gray-darker:            #777777 !default;
+$gray-dark:              #AAAAAA !default;
+$gray:                   #D1D1D1 !default;
+$gray-thin:              #E8E8E8 !default;
+$gray-light:             #F1F1F1 !default;
+$gray-lighter:           #F8F8F8 !default;
+
+$brand-primary: #1e88e5;
+$brand-primary-light: #2196f3;
+$brand-primary-dark: #1976d2;
+$brand-secondary: #009688;
+$brand-secondary-light: #52c7b8;
+$brand-secondary-dark: #00675b;
+$brand-neutral: $gray;
+$brand-neutral-light: $gray-light;
+$brand-neutral-dark: $gray-dark;
+$brand-background: $gray-thin;
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: -8px;
+  min-height: 100%;
+  background: $brand-background;
+  padding: 32px 60px;
+}
+
+.container {
+  background: white;
+  border: 1px solid $gray-dark;
+  border-radius: 4px;
+}
+
+.btn {
+  min-width: 110px;
+  border: 1px solid $gray-darker;
+  margin-right: 8px;
+}
+
+.btn-primary {
+  background-color: $brand-primary;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: $brand-primary-light;
+}
+
+.btn-secondary {
+  background-color: $brand-secondary;
+  color: black;
+}
+.btn-secondary:hover {
+  background-color: $brand-secondary-light;
+}
+
+.btn-neutral {
+  background-color: $brand-neutral;
+  color: black;
+}
+.btn-neutral:hover {
+  background-color: $brand-neutral-light;
+}
