@@ -1,0 +1,25 @@
+<div class="container padding">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>My Personal Crypto Tracker</h3>
+    </div>
+    <div class="col-xs-12">
+      <app-search #searchContainer (onFocus)="searchResultContainer.refocus()"></app-search>
+    </div>
+    <div class="col-xs-12">
+      <app-search-result #searchResultContainer [coins]="searchedCoin$ | async"
+                         (onAddCoin)="onAddCoin($event)"
+                         [term]="searchedTerm$ | async"></app-search-result>
+    </div>
+    <div class="col-xs-12">
+      <h5 class="list-header">List of tracked crypto(s)</h5>
+    </div>
+    <div class="col-xs-12">
+      <app-tracked-list [coins]="trackedCoin$ | async"
+                        [sort]="sortBy$ | async"
+                        [sortDirectionUp]="sortDirectionUp$ | async"
+                        (onChangeSort)="onChangeSort($event)"
+                        (onRemoveCoin)="onRemoveCoin($event)"></app-tracked-list>
+    </div>
+  </div>
+</div>
