@@ -1,0 +1,20 @@
+<div *ngIf="coins.length > 0">
+  <table>
+    <tr>
+      <th class="col-symbol" (click)="sortBy('symbol')">Symbol {{ sortSymbolIcon }}</th>
+      <th class="col-name" (click)="sortBy('name')">Name {{ sortNameIcon }}</th>
+      <th class="col-chart">Chart</th>
+      <th class="col-action"></th>
+    </tr>
+    <tr class="item-row" *ngFor="let item of coins">
+      <td>{{ item.symbol }}</td>
+      <td>{{ item.name }}</td>
+      <td></td>
+      <td class="action" (click)="removeCoin(item.id)"><div>Remove</div></td>
+    </tr>
+  </table>
+</div>
+
+<div class="no-item" *ngIf="coins.length === 0">
+  No coin tracked yet!
+</div>

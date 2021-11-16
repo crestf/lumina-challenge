@@ -1,0 +1,29 @@
+@import "../../../styles";
+
+.col-symbol {
+  width: 17%;
+  cursor: pointer;
+}
+.col-name {
+  width: 60%;
+  cursor: pointer;
+}
+.col-chart {
+  width: 20%;
+}
+.col-action {
+  width: 3%;
+}
+
+td, th {
+  border: 1px solid $gray;
+  padding: 4px 16px;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.no-item {
+  padding: 8px 16px;
+}
