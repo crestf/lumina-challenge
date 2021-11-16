@@ -6,7 +6,6 @@ import { MainRoutingModule } from './main-routing.module';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import * as fromMain from './main.reducer';
-import { DatatableComponent } from '../component/datatable/datatable.component';
 import { SearchComponent } from '../component/search/search.component';
 import { EffectsModule } from '@ngrx/effects';
 import { MainEffects } from './main.effects';
@@ -18,7 +17,6 @@ import { TrackedListComponent } from '../component/tracked-list/tracked-list.com
 @NgModule({
   declarations: [
     MainComponent,
-    DatatableComponent,
     SearchComponent,
     SearchResultComponent,
     TrackedListComponent
