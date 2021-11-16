@@ -4,7 +4,7 @@
       <h3>My Personal Crypto Tracker</h3>
     </div>
     <div class="col-xs-12">
-      <app-search #searchContainer (onFocus)="searchResultContainer.refocus()"></app-search>
+      <app-search #searchContainer (onFocus)="doFocus()"></app-search>
     </div>
     <div class="col-xs-12">
       <app-search-result #searchResultContainer [coins]="searchedCoin$ | async"

@@ -23,13 +23,13 @@ export class SearchResultComponent {
     return !!this.term && this.focus;
   }
 
-  @HostListener('document:click', ['$event'])
-  clickOut() {
-    if (this.resultShown) {
-      this.focus = false;
-      this.cdr.markForCheck();
-    }
-  }
+  // @HostListener('document:click', ['$event'])
+  // clickOut() {
+  //   if (this.resultShown) {
+  //     this.focus = false;
+  //     this.cdr.markForCheck();
+  //   }
+  // }
 
   refocus() {
     this.focus = true;

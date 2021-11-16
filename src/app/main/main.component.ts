@@ -6,6 +6,7 @@ import * as action from './main.action';
 import { Observable } from 'rxjs';
 import { SearchComponent } from '../component/search/search.component';
 import { Coin } from '../entity/coin.model';
+import { SearchResultComponent } from '../component/search-result/search-result.component';
 
 @Component({
   selector: 'app-main',
@@ -15,6 +16,7 @@ import { Coin } from '../entity/coin.model';
 export class MainComponent implements OnInit, AfterViewInit {
 
   @ViewChild('searchContainer', { static: false }) searchContainer: SearchComponent;
+  @ViewChild('searchResultContainer', { static: false }) searchResultContainer: SearchResultComponent;
 
   searchedTerm$: Observable<string>;
   searchedCoin$: Observable<Array<Coin>>;
@@ -58,5 +60,9 @@ export class MainComponent implements OnInit, AfterViewInit {
   onChangeSort(sort: { by: string, dir: boolean }) {
     this.store.dispatch(new action.SortAction(sort.by, sort.dir));
     this.store.dispatch(new action.LoadTrackedCoinAction());
+  }
+
+  doFocus() {
+    this.searchResultContainer.refocus();
   }
 }
