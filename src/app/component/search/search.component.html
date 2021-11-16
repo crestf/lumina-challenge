@@ -1,0 +1,7 @@
+<div class="input-group">
+  <input #term type="text" name="term" class="form-control"
+         placeholder="Search Crypto"
+         (focus)="onFocus.emit()"
+         (input)="emitValue($event.target.value)"/>
+  <button (click)="clear()">Clear</button>
+</div>
