@@ -1,0 +1,9 @@
+<div class="search-result" *ngIf="resultShown && coins.length > 0">
+  <div *ngFor="let item of coins">
+    <div class="record" (click)="addCoin(item.id)"><span class="coin-symbol">{{ item.symbol }}</span> <span
+      class="coin-name">{{ item.name }}</span></div>
+  </div>
+</div>
+<div class="search-result search-result-none" *ngIf="resultShown && coins.length === 0">
+  No Crypto found
+</div>
